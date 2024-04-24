@@ -3,7 +3,7 @@ source ./common.sh
 CHECK_ROOT
 
 echo "Please enter DB password:"
-read -s mysql_root_password
+read  mysql_root_password
 
 dnf module disable nodejs -y &>>$LOGFILE
 
