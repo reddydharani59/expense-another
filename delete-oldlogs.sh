@@ -10,3 +10,9 @@ else
 fi
 FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 echo "files deleted :$FILES"
+echo "$FILES is to delete"
+while IFS= read -r line
+ do 
+  echo "deleting file: $line"
+  rm -rf $line
+done <<<$FILES 
