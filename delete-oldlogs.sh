@@ -8,3 +8,5 @@ then
 else 
     echo -e "$R please make sure directory $SOURCE_DIRECTORY exists"
 fi
+FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
+echo "files deleted :$FILES"
