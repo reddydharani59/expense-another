@@ -1,9 +1,11 @@
 #!/bin/bash
 set -e
 handle_error(){
-    echo "error occurred at line number: $1, error occured at $2"
+    echo "Error occured at line number: $1, error command: $2"
 }
-trap handle_error ${LINENO} "$BASH_COMMAND" ERR
+
+trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
+
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
